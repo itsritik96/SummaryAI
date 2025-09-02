@@ -16,6 +16,9 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "SummaryAI",
   description: "App for summarizing pdf",
+  icons: {
+    icon: '/icon.ico',
+  },
   openGraph: {
     images: [
       {
