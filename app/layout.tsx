@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Source_Sans_3 as FontSans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header";
-import Footer from "@/components/common/footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
+import { ORIGIN_URL } from "@/utils/helper";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -16,6 +16,17 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "SummaryAI",
   description: "App for summarizing pdf",
+  openGraph: {
+    images: [
+      {
+        url: '/opengraph-image.png',
+      },
+    ],
+  },
+  metadataBase: new URL(ORIGIN_URL),
+  alternates: {
+    canonical: ORIGIN_URL,
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +43,7 @@ export default function RootLayout({
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
-          <Footer />
+        
         </div>
         <Toaster />
       </body>
