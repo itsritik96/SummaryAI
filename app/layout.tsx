@@ -14,7 +14,7 @@ const fontSans = FontSans({
 
 
 export const metadata: Metadata = {
-  title: "Summary",
+  title: "SummaryAI",
   description: "App for summarizing pdf",
 };
 

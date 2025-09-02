@@ -15,7 +15,7 @@ export default function ProgressBar({
             <div
               key={index}
               className={cn(
-                'h-full bg-linear-to-r from-gray-500 to-rose-600 transition-all duration-500',
+                'h-full bg-linear-to-r from-gray-500 to-red-600 transition-all duration-500',
                 index === currentSection
                   ? 'w-full'
                   : currentSection > index

@@ -18,7 +18,7 @@ export async function deleteSummaryAction({ summaryId }: {summaryId: string}) {
         DELETE FROM pdf_summaries WHERE id=${summaryId} AND user_id = ${userId} RETURNING id;`
 
         if(result.length > 0) {
-            revalidatePath('/dashboard');
+            revalidatePath(`/dashboard`);
             return { success: true};
         }
         return { success: false};

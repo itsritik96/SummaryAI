@@ -1,5 +1,42 @@
 import { Pizza } from "lucide-react";
-import { MotionH3 } from "../common/motion.wrapper";
+import { MotionDiv, MotionH3 } from "../common/motion.wrapper";
+import { SummaryViewer } from "../summaries/summary-viewer";
+
+const DEMO_SUMMARY = `
+
+# Bitcoin Explained Simply 🚀: A Peer-to-Peer Digital Cash System
+• The Bitcoin whitepaper introduces a decentralized electronic cash system allowing direct online payments without needing banks.
+• This innovative solution solves the double-spending problem using a peer-to-peer network and cryptographic proof.
+
+# Document Details
+• Type: Whitepaper
+• For: Anyone interested in understanding the technical foundation of Bitcoin.
+
+# Key Highlights
+• Peer-to-peer network enables direct transactions.
+• Proof-of-work secures the blockchain.
+• Solves the double-spending problem without trusted third parties.
+
+# Why It Matters
+• This paper laid the groundwork for a revolutionary technology that has the potential to transform finance and empower individuals by providing a secure, transparent, and decentralized system for value transfer, free from traditional intermediaries. 💰➡️🌍
+
+# Main Points
+• Bitcoin uses a chain of digital signatures to represent ownership of coins.
+• A peer-to-peer network timestamps transactions into a public, immutable ledger.
+• Proof-of-work mechanism ensures the security and integrity of the blockchain.
+
+# Pro Tips
+• Understand the concept of "longest chain" as the source of truth. ⛓️
+• Appreciate the role of incentives in maintaining network honesty. 💰
+• Consider the privacy implications of using public keys. 🔑
+
+# Key Terms to Know
+• Proof-of-Work: A mechanism requiring computational effort to prevent abuse and secure the network. ⛏️
+• Double-Spending: The risk of a single digital token being spent more than once. 💸
+
+# Bottom Line
+• Bitcoin offers a trustless, decentralized alternative to traditional financial systems. 💪`
+
 
 export default function DemoSection() {
     return (
@@ -18,22 +55,33 @@ export default function DemoSection() {
             }}
           />
             </div>
-            <div className="flex flex-col items-center text-center space-y-4">
+            <div className="flex flex-col items-center text-center space-y-4 w-full max-w-7xl mx-auto">
             <div className="inline-flex items-center justify-center p-2 rounded-2xl bg-gray-100/80 backdrop-blur-xs border border-gray-500/20 mb-4">
               <Pizza className="w-6 h-6 text-rose-500"/>
             </div>
             <div className="text-center mb-16">
               <MotionH3 
-                intial={{ y:20, opacity: 0 }}
-                whileInView={{ y:0, opacity: 1}}
-                transition={{ duration: 0.5, delay: 0.2}}
-                className="font-bold text-3xl max-w-2xl mx-auto px-4 sm:px-6">Watch how Summary transforms <span className="bg-linear-to-r from-rose-500 to-rose-700 bg-clip-text text-transparent ">this Next.js course PDF</span>{' '} into an easy-to-read summary!</MotionH3>
+                initial={{ opacity: 0, y:20 }}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{ duration: 0.5, delay: 0.2}}
+                className="font-bold text-3xl max-w-2xl mx-auto px-4 sm:px-6">Watch how <span className="bg-linear-to-r from-rose-500 to-rose-700 bg-clip-text text-transparent">SummaryAI</span>{' '} transforms this <span className="bg-linear-to-r from-rose-500 to-rose-700 bg-clip-text text-transparent ">Bitcoin white paper</span>{' '} into an easy-to-read summary!
+              </MotionH3>
+              </div>
+            
             <div className="flex justify-center items-center px-2 sm:px-4 lg:px-6">
                   {/*Summary viewer */}
+                  <MotionDiv
+                    initial={{ opacity: 0, y:20 }}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{ duration: 0.5, delay: 0.2}} 
+                    className="relative w-full flex-col items-center justify-center"
+                  >
+                    <SummaryViewer summary={DEMO_SUMMARY} />
+                  </MotionDiv>
             </div>
-            </div>
-            </div>  
-        </div>
+          </div>
+         </div>
+        
       </section>
     );
   }

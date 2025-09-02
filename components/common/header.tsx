@@ -11,7 +11,7 @@ export default function Header() {
             <div className="flex lg:flex-1">
                 <NavLink href="/" className="flex items-center gap-1 lg:gap-2 shrink-0">
                     <FileText className="w-5 h-5 lg:w-8 lg:h-8 text-gray-900 hover:rotate-12 transform transition duration-200 ease-in-out" />
-                    <span className="font-extrabold lg:text-xl text-gray-900">Summary</span>
+                    <span className="font-extrabold lg:text-xl text-gray-900">SummaryAI</span>
                 </NavLink>
             </div>
 
@@ -26,7 +26,7 @@ export default function Header() {
                 <SignedIn>
                 <div className="flex gap-2 items-center">
                     <NavLink href="/upload">Upload a PDF</NavLink>
-                    <div>Pro</div>
+                    
                     <SignedIn>
                         <UserButton />
                     </SignedIn>
