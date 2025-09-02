@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "SummaryAI",
   description: "App for summarizing pdf",
   icons: {
-    icon: '/icon.ico',
+    icon: '/favicon.ico',
   },
   openGraph: {
     images: [
